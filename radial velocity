@@ -1,0 +1,24 @@
+inputpath = 'data/'
+
+#import variables
+
+olr = np.load(inputpath + "OLR.npy")
+lon = np.load(inputpath + "XLONG.npy")
+lat = np.load(inputpath + "XLAT.npy" )
+qrainsfc = np.load(inputpath + "QRAINsfc.npy")
+qraincmp = np.load(inputpath + "QRAINcmp.npy")
+uwind = np.load(inputpath + "uInterp.npy")
+vwind = np.load(inputpath + "vInterp.npy")
+
+## alternate method
+# theta = np.arctan2(vwind,uwind)
+# uradial = uwind*np.cos(theta) + vwind*np.sin(theta)
+
+
+##gridpoint method
+# direction vector =dx*i +dy*j
+# wind = u*i + v*j
+#dirmag = np.sqrt(dx**2 + dy**2) #magnitude of the direction vector
+# dxunit = dx/dirmag #unit vector in x direction
+#dyunit = dy/dirmag #unit vector in y direction
+#radial = dxunit*u + dyunit*v
